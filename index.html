@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Use with reveal.js 3.8.0 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Kubernietes</title>
+
+    <link rel="stylesheet" href="reveal.js-3.8.0/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js-3.8.0/css/theme/black.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js-3.8.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.8.0/css/print/pdf.css' : 'reveal.js-3.8.0/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h1>Stop ranting, Start enabling</h1>
+            <h3>Using PHP cloud native</h3>
+          </section>
+          <section>
+            <h3>Who am I</h3>
+            <div id="left">
+              <ul>
+                <li>Wiard van Rij</li>
+                <li>{buzzword} engineer</li>
+                <li><a href="https://github.com/wiardvanrij/">github.com/wiardvanrij</a></li>
+              </ul>
+            </div>
+            <div id="right">
+              <img src="img/dablong.png" style="border:none; background:none;width:60%;"/><br/>
+            </div>
+          </section>
+          <section>
+            <h3>A little more history</h3>
+            <ul>
+              <li>Experience with the worst setups and slighty better ones ;)</li>
+              <li>Also high traffic stuff</li>
+              <li>Originally a (PHP) developer</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Now about you</h1>
+              <ul>
+                <li class="fragment">Who is a developer? <div class="fragment">that uses PHP?</div></li>
+                <li class="fragment">Who is using containers<div class="fragment">in production?</div></li>
+              <ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>How my story started</h1>
+            <ul>
+              <li>From Dev to DevOps</li>
+              <li>Previous setups that I knew</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="img/cluster.png"/>
+          </section>
+
+          <section>
+            <h1>The upside</h1>
+            <ul>
+              <li>The setup was "cheap"</li>
+              <li>Performance was great</li>
+              <li>It gave the developers more tools &amp; freedom</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>The downside</h1>
+            <ul>
+              <li>Automation, automation..still quite a lot of manual work</li>
+              <li>Apps lacked some cloud native context to make it easier</li>
+              <li>It was hard</li>
+              <li>It's nearly impossible to involve a community</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>How it continued</h1>
+            <ul>
+              <li>I joined Fullstaq</li>
+              <li>I had discussions</li>
+              <li>I'm stubborn</li>
+              <li>I'll prove otherwise</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="img/phpmeme1.jpg" />
+          </section>
+
+          <section>
+            <h1>About you again</h1>
+            <ul>
+              <li class="fragment">Who got bashed because they use PHP?</li>
+              <li class="fragment">Who ever made fun of another language?</li>
+            </ul>
+          </section>
+
+          <section>
+            <img height="800" src="img/true.jpg" />
+          </section>
+
+          <section>
+            <h1>Let's get this straight</h1>
+            <div id="left">
+              <ul>
+                <li>A good engineer will make it work..properly.</li>
+                <li>The language does not matter at all, in the end.</li>
+              </ul>
+            </div>
+            <div id="right">
+              <img height="500" src="img/howto.jpg" />
+            </div>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h1>Technical</h1>
+            <h3>What do we want?</h3>
+            <ul>
+              <li>12 factor app!</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Technical</h1>
+            <h3>When do we want it?</h3>
+            <ul>
+              <li class="fragment">NOW!</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>12 factor app</h3>
+            <ul>
+              <li>I. Codebase:
+                One codebase tracked in revision control, many deploys</li>
+              <li>II. Dependencies:
+                Explicitly declare and isolate dependencies</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>12 factor app</h3>
+            <ul>
+              <li>VI. Processes:
+                  Execute the app as one or more stateless processes</li>
+              <li>VIII. Concurrency: Scale out via the process model</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>  
+          <section>
+            <h1>Wordpress basics</h1>
+            <img height="300" src="img/tree.png" />
+            <br />
+            <ul>
+              <li>dynamic content</li>
+              <li>admin area</li>
+            </ul>
+          </section>
+
+          <section>
+            <img height="600" src="img/stack.png" />
+          </section>
+
+          <section>
+            <h1>What will happen</h1>
+            <ul>
+              <li>Losing stateless</li>
+              <li>Different environments</li>
+              <li>Runtime actions</li>
+            </ul>
+          </section>
+
+          <section>
+            <img height="600" src="img/wpruntime.png" />
+          </section>
+        </section>  
+
+        <section>
+          <section>
+            <h1>But we can fix it!</h1>
+            <ul>
+              <li>Let's think about how..</li>
+              <li>and why?</li>
+            </ul>
+          </section>
+
+          <section>
+            <img height="600" src="img/wpprep.png" />
+          </section>
+
+          <section>
+            <img height="600" src="img/wpcont.png" />
+          </section>
+
+          <section>
+            <h1>How to deal with wp-content</h1>
+            <ul>
+              <li>Think cloud native</li>
+            </ul>
+          </section>
+
+          <section>
+              <img height="600" src="img/bucket.png" />
+            </section>
+
+          <section>
+            <h1>We want cache</h1>
+            <ul>
+              <li>Again, think cloud native</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>We want plugins &amp; themes</h1>
+            <ul>
+              <li>So...how?</li>
+              <li>Limitations!</li>
+            </ul>
+          </section>
+        </section>  
+
+        <section>
+          <section>
+            <h1>Think about what you want</h1>
+            <ul>
+              <li>How to implement it</li>
+              <li>What does it do</li>
+              <li>Do I know what it does?</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Recap</h1>
+            <ul>
+              <li>What does it all mean</li>
+              <li>What does it provide to you</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Live demo</h1>
+            <ul>
+              <li>pray to the demo gods</li>
+            </ul>
+          </section>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js-3.8.0/lib/js/head.min.js"></script>
+    <script src="reveal.js-3.8.0/js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        width: "90%",
+        margin: 0.05,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'reveal.js-3.8.0/plugin/markdown/marked.js' },
+          { src: 'reveal.js-3.8.0/plugin/markdown/markdown.js' },
+          { src: 'reveal.js-3.8.0/plugin/notes/notes.js', async: true },
+          { src: 'reveal.js-3.8.0/plugin/tagcloud/tagcloud.js', async: true },
+          { src: 'reveal.js-3.8.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+      var resizeSlide = function() {
+        Reveal.configure({
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+      }
+
+    </script>
+  </body>
+</html>
